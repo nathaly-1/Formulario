@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import react from "react";
+
 import Form from "./components/Form";
 function App() {
   return (

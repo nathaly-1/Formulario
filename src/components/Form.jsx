@@ -33,7 +33,7 @@ const Form = () => {
 
         event.preventDefault()//resivira todo los que a enviado
         
-        if (funcion == 'registrar') {
+        if (funcion === 'registrar') {
             const objeto = { matricula: matricula, nombre: nombre, carrera: carrera, foto: imagen }
             setAlumnos([...alumnos, objeto])
             limpiar()
