@@ -2,8 +2,7 @@
 import React, { useState } from 'react'
 
 const Form = () => {
-    const carreras = ['Ing. en Sistemas', 'Ing. en Quimica', 'Lic. en Administracion', "Ing. en TIC'S",
-        'Ing. en Civil', 'Ing. en Logistica', 'Ing. en Electrica', 'Ing. en Mecatronica']
+    const carreras = ['Femenino', 'Masculino', 'Indistinto']
 
     //Hooks
     const [alumnos, setAlumnos] = useState([])
@@ -77,20 +76,22 @@ const Form = () => {
     }
 
     return (
+       
+    
         <>
 
             <form className="row g-3 needs-validation" onSubmit={sumitForms }>
                 <div className="col-md-4">
-                    <label for="validationCustom01" class="form-label">Matricula</label>
-                    <input type="text" placeholder='matricula' onChange={hanleMatriculachangeut} value={matricula} disabled={bloqueo} required />
+                    <label for="validationCustom01" class="form-label">Id Cliente</label>
+                    <input type="text" placeholder='N. Cliente' onChange={hanleMatriculachangeut} value={matricula} disabled={bloqueo} required />
                 </div>
                 <div className="col-md-4">
                     <label for="validationCustom02" class="form-label">Nombre Completo</label>
-                    <input type="text" placeholder='nombre' onChange={hanleNombrechangeut} value={nombre} required />
+                    <input type="text" placeholder='Nombre' onChange={hanleNombrechangeut} value={nombre} required />
                 </div>
                 <div className="col-md-4" >
                     <select onChange={hanleCarrerachangeut} value={carrera} required>
-                        <option selected>--Seleccionar carrera--</option>
+                        <option selected>--Seleccionar Sexo--</option>
                         {carreras.map((carr, index) => {
                             return <option key={index}>{carr}</option>
                         })}
@@ -98,7 +99,7 @@ const Form = () => {
                 </div>
 
                 <div className="col-md-4"  >
-                    <label for="validationCustom02" class="form-label"> Seleccione Imagen</label>
+                    <label for="validationCustom02" class="form-label"> Seleccione Foto</label>
                     <input type="file" accept='image/*' onChange={hanleImagenchangeut} ref={imagen} />
                 </div>
 
@@ -111,10 +112,10 @@ const Form = () => {
                 <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Matricula</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Carrera</th>
-                            <th scope="col">foto</th>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre Completo</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Fotografia</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -136,6 +137,7 @@ const Form = () => {
                 </table>
             </sectio>
         </>
+        
     )
 }
 
